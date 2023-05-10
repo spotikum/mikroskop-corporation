@@ -21,7 +21,7 @@
 	// Mengecek apakah data ditemukan
 	if ($count == 1) {
 		$_SESSION['username'] = $username;
-		header("Location: index.php");
+		header("Location: ../index.php");
 	} else {
 		header("Location: login.html");
 	}

@@ -1,4 +1,4 @@
-<?php session_start(); if(empty($_SESSION['username'])){header("LOCATION: login.php");}?>
+<?php session_start(); if(empty($_SESSION['username'])){header("LOCATION: auth/login.php");}?>
 <!doctype html>
 <html lang="en">
      <head>
@@ -11,7 +11,7 @@
           <nav class="navbar navbar-expand-lg bg-light">
                <div class="container">
                     <div class="container-fluid my-3">
-                         <a class="navbar-brand" href="#">
+                         <a class="navbar-brand" href="index.php">
                               <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-06-512.png" alt="Logo" width="40" class="d-inline-block align-text-center">
                               Mikroskop
                          </a>
@@ -24,7 +24,7 @@
                                         <?php echo $_SESSION['username'] ?>
                                    </a>
                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                                        <li><a class="dropdown-item" href="auth/logout.php">Logout</a></li>
                                    </ul>
                               </li>
                          </ul>
