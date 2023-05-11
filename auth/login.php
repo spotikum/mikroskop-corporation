@@ -16,7 +16,10 @@
 
 	// Mengecek apakah data ditemukan
 	if ($count == 1) {
-		$_SESSION['username'] = $username;
+		while ($row = mysqli_fetch_assoc($result)) {
+			$_SESSION['uid'] = $row["id"];
+			$_SESSION['username'] = $row["username"];
+		}
 		header("Location: ../index.php");
 	} else {
 		header("Location: login.html");
