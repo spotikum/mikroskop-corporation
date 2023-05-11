@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `content`
+--
+
+DROP TABLE IF EXISTS `content`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `content` (
+  `uid` int DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `content`
+--
+
+LOCK TABLES `content` WRITE;
+/*!40000 ALTER TABLE `content` DISABLE KEYS */;
+INSERT INTO `content` VALUES (1,'hai','2023-05-12 00:57:01'),(1,'hai lagi','2023-05-12 00:58:06'),(1,'hahahai','2023-05-12 00:59:42'),(1,'yuhuu','2023-05-12 00:59:50'),(1,'yes bisa','2023-05-12 01:00:25');
+/*!40000 ALTER TABLE `content` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -23,8 +47,9 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `id` int DEFAULT NULL,
+  `username` varchar(12) DEFAULT NULL,
+  `password` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -34,7 +59,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('spot','W');
+INSERT INTO `user` VALUES (1,'spot','W');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +72,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-10  7:50:20
+-- Dump completed on 2023-05-12  2:11:16
