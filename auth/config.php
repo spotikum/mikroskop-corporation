@@ -1,5 +1,5 @@
 <?php
-$host = "localhost";
+	$host = "localhost";
 	$user = "bukanspot";
 	$password = "W";
 	$database = "mikroskop";
