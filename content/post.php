@@ -5,7 +5,7 @@
 	$content = $_GET['content'];
 	$uid = $_SESSION['uid'];
 
-	$query = "insert into content values('$uid', '$content')";
+	$query = "insert into content values('$uid', '$content', NOW())";
 	mysqli_query($koneksi, $query);
 
      header("Location: ../index.php");
