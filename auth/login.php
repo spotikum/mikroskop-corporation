@@ -1,11 +1,7 @@
 <?php
 	session_start();
 	// Menghubungkan ke database
-	$host = "localhost";
-	$user = "bukanspot";
-	$password = "W";
-	$database = "mikroskop";
-	$koneksi = mysqli_connect($host, $user, $password, $database);
+	require 'config.php';
 
 	// Menangkap data yang dikirim dari form login
 	$username = $_GET['username'];
