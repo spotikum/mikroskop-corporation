@@ -1,11 +1,7 @@
 <?php
 	session_start();
 	// Menghubungkan ke database
-	$host = "localhost";
-	$user = "bukanspot";
-	$password = "W";
-	$database = "mikroskop";
-	$koneksi = mysqli_connect($host, $user, $password, $database);
+	require 'config.php';
 
 	// Menangkap data yang dikirim dari form login
 	$username = $_GET['username'];
@@ -20,7 +16,10 @@
 
 	// Mengecek apakah data ditemukan
 	if ($count == 1) {
-		$_SESSION['username'] = $username;
+		while ($row = mysqli_fetch_assoc($result)) {
+			$_SESSION['uid'] = $row["id"];
+			$_SESSION['username'] = $row["username"];
+		}
 		header("Location: ../index.php");
 	} else {
 		header("Location: login.html");
