@@ -1,21 +1,34 @@
 <?php
-// Connect to SQLite database
+   // try {
+   //    //open the database
+   //    $db = new PDO('sqlite:database.db');
+
+   //    //insert some data
+   //    $db->exec("select username, content, date from posts inner join user on user.id = posts.uid order by date desc");
+
+   //    echo $db;
+
+   //    //close the database connection
+   //    $db = null;
+   // } catch(PDOException $e) {
+   //    print 'Exception : '.$e->getMessage();
+   // }
+?>
+
+<?php
+// Connect to the database
 $db = new PDO('sqlite:database.db');
 
-// Prepare SELECT statement
-$sql = "SELECT * FROM user WHERE username = 'spot' AND password = 'W'";
-$get_count = $db->query($sql);
-$get_uid = $db->prepare($sql);
+// Prepare a SELECT statement
+$stmt = $db->prepare('select username, content, date from posts inner join user on user.id = posts.uid order by date desc');
 
-$get_uid->execute();
+// Execute the SELECT statement
+$stmt->execute();
 
-// Fetch all rows as an associative array
-$rows = $get_count->fetchAll(PDO::FETCH_ASSOC);
-$row = $get_uid->fetch(PDO::FETCH_ASSOC);
+// Fetch the results
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Get number of rows
-$num_rows = count($rows);
-$data = $row['username'];
-
-echo "Number of rows: " . $data . $num_rows;
+foreach ($results as $row) {
+   echo $row['username'] . ' ' . $row['content'] . ' ' . $row['date'] . "\n";
+}
 ?>
