@@ -25,10 +25,9 @@
 
 	// Check data
 	if ($num_rows == 1) {
-		$root = $_SESSION['root'];
 		$_SESSION['uid'] = $uid;
 		$_SESSION['username'] = $username;
-		header("Location: $root");
+		header("Location: " . $_SESSION['root']);
 	} else {
 		header("Location: login.html");
 	}
