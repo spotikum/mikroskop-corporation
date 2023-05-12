@@ -1,5 +1,6 @@
 <?php
      session_start();
      session_destroy();
-     header("Location: ../index.php");
+     $root = $_SESSION['root'];
+     header("Location: $root");
 ?>
