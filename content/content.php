@@ -17,12 +17,12 @@ foreach ($results as $row) { ?>
                <?php echo $row['username']; ?>
           </div>
           <div class="card-body">
-               <h5 class="card-title mb-3">
+               <h5 class="card-title">
                     <?php echo $row['content']; ?>
                </h5>
-               <p>
-                    <?php echo $row['date']; ?>
-               </p>
+          </div>
+          <div class="card-footer">     
+               <?php echo $row['date']; ?>
           </div>
      </div>
 <?php }
