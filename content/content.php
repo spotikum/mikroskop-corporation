@@ -1,6 +1,6 @@
 <?php
 // Connect to the database
-$db = new PDO('sqlite:database.db');
+$db = new PDO('sqlite:database.sqlite');
 
 // Prepare a SELECT statement
 $stmt = $db->prepare('select username, content, date from posts inner join user on user.id = posts.uid order by date desc');

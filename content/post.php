@@ -5,7 +5,7 @@
 	$content = $_GET['content'];
 
 	// Connect to the database
-	$db = new PDO('sqlite:../database.db');
+	$db = new PDO('sqlite:../database.sqlite');
 
 	try {
 		$db->exec("insert into posts(uid, content) values($uid,'$content')");

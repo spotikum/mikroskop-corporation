@@ -3,7 +3,7 @@
 	session_start();
 
 	// Connect to SQLite database
-	$db = new PDO('sqlite:../database.db');
+	$db = new PDO('sqlite:../database.sqlite');
 
 	// Get data from login form
 	$username = $_GET['username'];
