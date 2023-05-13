@@ -14,7 +14,7 @@
                               <?php echo $_SESSION['username'] ?>
                          </a>
                          <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="auth/logout.php">Logout</a></li>
+                              <li><a class="dropdown-item" href="<?php $_SESSION['root'] ?>auth/logout.php">Logout</a></li>
                          </ul>
                     </li>
                </ul>

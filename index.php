@@ -5,7 +5,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>Mikroskop</title>
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-          <?php session_start(); if(empty($_SESSION['uid'])){header("LOCATION: auth/login.php");}?>
+          <?php session_start(); if(empty($_SESSION['uid'])){ $_SESSION['root'] = $_SERVER['REQUEST_URI']; header("LOCATION: auth/login.php");}?>
      </head>
      <body>
           <?php require 'layout/navbar.php' ?>
